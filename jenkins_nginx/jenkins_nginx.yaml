@@ -21,6 +21,7 @@ services:
           - jenkins
       volumes:
           - "/opt/docker_data/nginx_conf/nginx.conf:/etc/nginx/nginx.conf:ro"
+          - "/opt/docker_data/nginx_conf/locations/:/etc/nginx/locations/"
       networks:
           - jenkinsnet
 
