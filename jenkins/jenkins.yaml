@@ -6,24 +6,8 @@ services:
       restart: always
       env_file:
           - vars.env
-  #    ports:
-  #        - "8080:8080"
-  #        - "50000:50000"
+      ports:
+          - "8080:8080"
+          - "50000:50000"
       volumes:
           - "/opt/docker_data/jenkins:/var/jenkins_home"
-  #
-  # nginx:
-  #     image: nginx
-  #     container_name: nginx
-  #     restart: always
-  #     ports:
-  #         - "80:80"
-  #     links:
-  #         - jenkins
-  #     volumes:
-  #         - "/opt/docker_data/nginx_conf/nginx.conf:/etc/nginx/nginx.conf:ro"
-
-networks:
-    default:
-        external:
-            name: dockernet
