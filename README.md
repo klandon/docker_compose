@@ -1,8 +1,8 @@
 # docker_compose
 
-##Docker Compose Files for Common Docker Hub Containers
+## Docker Compose Files for Common Docker Hub Containers
 
-##General use and collection of docker compose Files
+## General use and collection of docker compose Files
 
 1. Test Containers
 * jenkins == standard jenkins test container
