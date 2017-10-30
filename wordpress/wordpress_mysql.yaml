@@ -7,11 +7,28 @@ services:
     restart: always
     ports:
       - 8080:80
-    environment:
-      WORDPRESS_DB_PASSWORD: wordpress
+    env_file:
+        - wp_vars.myenv
+    networks:
+        - wordpressnet
 
   mysql:
     image: mysql:5.7
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: wordpress
+    env_file:
+        - mysql_vars.myenv
+    networks:
+        - wordpressnet
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+        - 8081:8080
+    networks:
+        - wordpressnet
+
+#create network
+networks:
+  wordpressnet:
+    driver: bridge
